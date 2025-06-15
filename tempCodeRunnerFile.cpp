@@ -1,4 +1,1 @@
- else
-                 {
-                     break;
-                 }
+std::cin.ignore();
