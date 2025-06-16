@@ -14,7 +14,7 @@ void userAuthentication(std::string &password);
 void addCredential(Credential info[], int &userCount);
 void viewCredential(Credential info[], int userCount);
 void deleteCredential(Credential info[], int &userCount);
-bool passwordStrength(Credential info[], int userCount);
+void passwordStrength(Credential info[], int userCount);
 void displayMenu(int &option, Credential info[], int userCount);
 
 int main()
@@ -135,7 +135,7 @@ void displayMenu(int &option, Credential info[], int userCount)
             break;
         case 4:
             system("cls");
-            viewCredential(info, userCount);
+            passwordStrength(info, userCount);
             break;
         case 5:
             system("cls");
@@ -248,4 +248,7 @@ void deleteCredential(Credential info[], int &userCount)
         }
     }
 }
-bool passwordStrength(Credential info[], int userCount);
+void passwordStrength(Credential info[], int userCount)
+{
+    std::cout << "strength";
+};
