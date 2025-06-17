@@ -8,7 +8,6 @@ struct Credential
     std::string username;
     std::string password;
 };
-
 const int maxCredentials = 100;
 void userAuthentication(std::string &password);
 void addCredential(Credential info[], int &userCount);
@@ -22,7 +21,6 @@ int main()
     std::string vaultPassword;
     Credential credential[maxCredentials];
     int usercount = 0, menuOption;
-
     system("cls");
     userAuthentication(vaultPassword);
     displayMenu(menuOption, credential, usercount);
@@ -250,5 +248,36 @@ void deleteCredential(Credential info[], int &userCount)
 }
 void passwordStrength(Credential info[], int userCount)
 {
-    std::cout << "strength";
+    if (userCount == 0)
+    {
+        std::cin.ignore();
+        std::cout << "The Vault Is Empty\nPress Enter To Return To Menu...";
+        std::cin.get();
+        system("cls");
+    }
+    else
+    {
+        std::cin.ignore();
+        std::cout << "Saved Credentials\n";
+        for (int i = 0; i < userCount; i++)
+        {
+            std::cout << (i + 1) << ".   |  " << info[i].website << "   |  " << info[i].username << "   |  " << info[i].password << std::endl;
+            int length = info[i].password.length();
+            if (length < 6)
+            {
+                std::cout << "Password Strength: Weak\n";
+            }
+            else if (length < 10)
+            {
+                std::cout << "Password Strength: Moderate\n";
+            }
+            else
+            {
+                std::cout << "Password Strength: Strong\n";
+            }
+        }
+        std::cout << "\nPress Enter To Return To Menu...";
+        std::cin.get();
+        system("cls");
+    }
 };
