@@ -179,7 +179,7 @@ void displayMenu(int &option, Credential info[], int userCount)
         }
 
     } while (option > 0 && option < 6);
-};
+}
 void viewCredential(Credential info[], int userCount)
 {
 
@@ -280,4 +280,4 @@ void passwordStrength(Credential info[], int userCount)
         std::cin.get();
         system("cls");
     }
-};
+}
